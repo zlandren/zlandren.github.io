@@ -1,0 +1,12 @@
+#die {
+  height: 100px;
+  width: 100px;
+  background-color: lightgray; 
+  position: relative;
+}
+#secondDie {
+  height: 100px;
+  width: 100px;
+  background-color: lightgray; 
+  position: relative;
+}
