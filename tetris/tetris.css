@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  background-color: #2e2e2e; /* dark grey */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+#content {
+  position: relative;
+  left: 100px;
+  width: 120px;
+  height: 120px;
+  background: green;
+  border: 2px solid #555;
+}
+#body {
+  position: relative;
+  width: 300px;
+  height: 600px;
+  background: #000000;
+  border: 2px solid #555;
+}
+#holdBoard {
+  position: relative;
+  right: 122px;
+  bottom: 544px;
+  width: 120px;
+  height: 120px;
+  background: #000000;
+  border: 2px solid #555;
+}
+#nextBoard {
+  position: relative;
+  left: 302px;
+  bottom: 668px;
+  width: 120px;
+  height: 270px;
+  background: #000000;
+  border: 2px solid #555;
+}
+#allContents {
+    max-width: 400px;
+    margin: auto;
+}
+#menu {
+  position: relative;
+  right: 92px;
+  top: 428px;
+  width: 90px;
+  height: 270px;
+  background: lightgray;
+  border: 2px solid #555;
+}
+.cell {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  box-sizing: border-box;
+  border: 1px solid #222;
+}
+.cell.filled {
+  background: white;
+}
+.cell.active {
+  background: darkred;
+}
+.cell.next {
+  background: darkgreen;
+}
+.cell.inActive {
+  background: green;
+}
+.cell.ghost {
+  background: white;
+  opacity: 0.3;
+}
+#scoreBoard {
+    color: lightgray;
+    margin: 0 auto;
+    width: 100%;
+    bottom: 50;
+}
