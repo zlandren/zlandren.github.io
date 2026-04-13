@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", startGame);
   const board = document.getElementById("body");
   const nextBoard = document.getElementById("nextBoard");
   ////////////////////variable declarations////////////////////
-  let nextPiece = [];
   let grid = [];
   let gridB = [];
   let gridC = [];
@@ -26,6 +25,7 @@ document.addEventListener("DOMContentLoaded", startGame);
   let currentScore = document.getElementById("score");
   let currentLevel = document.getElementById("level");
   let heldPiece = 0;
+  let nextPiece;
   let level = 0;
   let score = 0;
   let speed = 1000;
@@ -91,7 +91,7 @@ update();
   }
   function increaseScore(){
     currentScore.textContent = ("Score: " + score);
-    console.log(score);
+    //console.log(score);
   }
   createFutureGrid();
   createLandedGrid();
@@ -309,11 +309,12 @@ document.addEventListener("keydown", handleKeyDown);
         //swapPiece();
         restart();
         update();
-        console.log(a);
-        console.log(b);
+        console.log();
+        console.log();
         break;
     }
 }
+
 function displayNextPiece() {
   const shape = activePiece.shape;
   for (let y = 0; y < shape.length; y++) {
@@ -388,7 +389,7 @@ function clearFutureGrid() {
     }
   }
 }
-  let tempArray = [];
+const tempArray =  new Int16Array(1);
 function specificPiece(){
        if(tempArray[0] === 1) { spawnTee(); }
   else if(tempArray[0] === 2) { spawnLeftL(); }
@@ -400,9 +401,10 @@ function specificPiece(){
   }
   function swapPiece() {
    heldPiece = activePiece.n
-      tempArray.push(heldPiece);
-      tempArray.length = 0
-    console.log(tempArray);
+      //tempArray.push(heldPiece);
+      //tempArray.shift()
+    //console.log(tempArray.length);
+    console.log(tempArray[0]);
     }
 function holdPiece(){
   const shape = activePiece.shape;
@@ -609,6 +611,11 @@ function showNextPiece() {
   }
 
 function spawnPiece() {
+  /*if (!nextPiece) {
+    nextPiece = randomPiece();
+  }
+  activePiece = nextPiece;
+  nextPiece = randomPiece();*/
   var randomNum = Math.ceil(Math.random() * 7);
        if(randomNum === 1) { spawnTee(); }
   else if(randomNum === 2) { spawnLeftL(); }
