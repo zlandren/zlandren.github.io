@@ -45,10 +45,12 @@ async function quicksort(array, left, right) {
 async function partition(array, left, right) {
 pivot = array[Math.floor((right + left) / 2)].value;
 while (left < right) { left++ }
-while (right < pivot) { right-- }
+while (right > pivot) { right-- }
 while (array[right] > pivot) { right-- }
-if (left , right) {
+if (left < right) {
 swap(array[left], array[right]);
+updateCounter(quickCounter);
+await sleep();
 return left + 1
 }
 

@@ -391,20 +391,25 @@ function clearFutureGrid() {
 }
 const tempArray =  new Int16Array(1);
 function specificPiece(){
-       if(tempArray[0] === 1) { spawnTee(); }
-  else if(tempArray[0] === 2) { spawnLeftL(); }
-  else if(tempArray[0] === 3) { spawnRightL(); }
-  else if(tempArray[0] === 4) { spawnRightSquiggly(); }
-  else if(tempArray[0] === 5) { spawnLeftSquiggly(); }
-  else if(tempArray[0] === 6) { spawnSquarePiece(); }
-  else if(tempArray[0] === 7) { spawnLinePiece(); }
+       if(heldPiece === 1) { spawnTee(); }
+  else if(heldPiece === 2) { spawnLeftL(); }
+  else if(heldPiece === 3) { spawnRightL(); }
+  else if(heldPiece === 4) { spawnRightSquiggly(); }
+  else if(heldPiece === 5) { spawnLeftSquiggly(); }
+  else if(heldPiece === 6) { spawnSquarePiece(); }
+  else if(heldPiece === 7) { spawnLinePiece(); }
   }
   function swapPiece() {
-   heldPiece = activePiece.n
+    let temp = activePiece.n
+   activePiece.n = heldPiece
+   heldPiece = temp;
       //tempArray.push(heldPiece);
       //tempArray.shift()
     //console.log(tempArray.length);
-    console.log(tempArray[0]);
+   // console.log(tempArray[0]);
+   console.log("held " + heldPiece, "active " + activePiece.n)
+   update();
+   clearGrid();
     }
 function holdPiece(){
   const shape = activePiece.shape;
